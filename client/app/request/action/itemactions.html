@@ -1,0 +1,17 @@
+<!-- View Single Request-->
+<div class="pm-body clearfix"> 
+    <ul class="tab-nav tn-justified">
+        <li class="btn-wave" ui-sref-active="active"><a data-ui-sref="user.requests.itemactions.itemdetails">Details</a></li>
+        <li class="btn-wave" ui-sref-active="active"><a ui-sref="user.requests.itemactions.itemedit">Edit</a></li>
+        <li class="btn-wave"><a ui-sref="pages.profile.profile-timeline">Tasks</a></li>
+        <li class="btn-wave"><a ui-sref="pages.profile.profile-photos">Resolution</a></li>
+        <li class="btn-wave"><a ui-sref="pages.profile.profile-connections">Reminders</a></li>
+        <li class="btn-wave"><a ui-sref="pages.profile.profile-connections">Work Log</a></li>
+        <li class="btn-wave"><a ui-sref="pages.profile.profile-connections">History</a></li>
+    </ul>
+
+    <div class="pmb-block">
+        <h3><i class="zmdi zmdi-person m-r-5"></i>{{ vm.request.Subject }}</h3>
+        <div ui-view></div>
+    </div>
+</div>

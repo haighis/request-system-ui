@@ -1,0 +1,47 @@
+<a style="position: absolute; bottom: -22px; right: -27px;" href="" class="btn btn-login btn-danger btn-float" ng-click="vm.showAddEnrollCodeModal()"><i class="zmdi zmdi-plus-circle-o"></i></a>
+
+<modal-dialog show='vm.addEnrollCodeDialogShown' dialog-title='Add & Email Enroll Code' height='60%' width='50%' style="overflow-y:auto;">
+<form name="addEnrollCodeForm" ng-submit="vm.addSendEnrollCode(addEnrollCodeForm.$valid)" novalidate> 
+  <div class="card-body card-padding">
+      <div class="row">
+        <div class="col-xs-3">
+              <div class="fg-line form-group">
+                <label>Enroll Code</label>
+                   <input type="text" class="form-control input-sm" ng-model="vm.enrollCode.Code" disabled> 
+              </div>
+          </div>
+      </div> 
+      <div class="row">
+          <div class="col-xs-3">
+              <div class="fg-line form-group" ng-class="{ 'has-error' : addEnrollCodeForm.Company.$error.required }">
+                <label class="control-label">Company</label>
+                  <input type="text" class="form-control input-sm" name="Company" ng-minlength="2" ng-maxlength="24" ng-model="vm.enrollCode.CompanyName" required>
+              </div>
+          </div>
+          <div class="col-xs-3">
+              <div class="fg-line form-group" ng-class="{ 'has-error' : addEnrollCodeForm.email.$error.required || addEnrollCodeForm.Email.$error.email }">
+                <label class="control-label">Email Address</label>
+                   <input type="email" class="form-control input-sm" ng-model="vm.enrollCode.Email" required ng-maxlength="256" name="Email">
+              </div>
+          </div>
+      </div>
+      <div class="row">
+          <div class="col-xs-3">
+              <div class="fg-line form-group" ng-class="{ 'has-error' : addEnrollCodeForm.Firstname.$error.required }">
+                <label class="control-label">First Name</label>
+                   <input type="text" class="form-control input-sm" ng-model="vm.enrollCode.FirstName" ng-maxlength="64" required name="Firstname">
+              </div>
+          </div>
+          <div class="col-xs-3">
+              <div class="fg-line form-group" ng-class="{ 'has-error' : addEnrollCodeForm.Lastname.$error.required }">
+                <label class="control-label">Last Name</label>
+                   <input type="text" class="form-control input-sm" ng-model="vm.enrollCode.LastName" ng-maxlength="64" required name="Lastname">
+              </div>
+          </div>
+      </div>
+      <div class="row">
+          <button ng-click="vm.addSendEnrollCode()" ng-disabled="addEnrollCodeForm.$invalid">Save & Email</button>
+      </div>
+  </div> 
+</form>
+</modal-dialog>

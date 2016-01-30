@@ -1,0 +1,115 @@
+<html lang="en" ng-app="incidentSystemApp">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <base href="/">
+    <title>Help Desk Sys</title>
+    
+    <!-- Place favicon.ico and apple-touch-icon.png in the root directory -->
+    <!-- build:css(client) app/vendor.css -->
+      <!-- bower:css -->
+      <link rel="stylesheet" href="bower_components/ngModal/dist/ng-modal.css" />
+      <link rel="stylesheet" href="bower_components/angular-material/angular-material.css" />
+      <!-- endbower -->
+    <!-- endbuild -->
+    <!-- build:css({.tmp,client}) app/app.css -->
+      <link rel="stylesheet" href="app/app.css">
+      <!-- injector:css -->
+      <!-- endinjector -->
+    <!-- endbuild -->
+  </head>
+  <body>
+    <!--[if lt IE 7]>
+      <p class="browserupgrade">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
+    <![endif]-->
+
+    <ui-view flex layout="column">
+    </ui-view>
+
+    <!--[if lt IE 9]>
+    <script src="bower_components/es5-shim/es5-shim.js"></script>
+    <script src="bower_components/json3/lib/json3.min.js"></script>
+    <![endif]-->
+    <!-- build:js({client,node_modules}) app/vendor.js -->
+      <!-- bower:js -->
+      <script src="bower_components/jquery/dist/jquery.js"></script>
+      <script src="bower_components/angular/angular.js"></script>
+      <script src="bower_components/angular-resource/angular-resource.js"></script>
+      <script src="bower_components/angular-cookies/angular-cookies.js"></script>
+      <script src="bower_components/angular-sanitize/angular-sanitize.js"></script>
+      <script src="bower_components/angular-route/angular-route.js"></script>
+      <script src="bower_components/lodash/dist/lodash.compat.js"></script>
+      <script src="bower_components/moment/moment.js"></script>
+      <script src="bower_components/angular-modal-service/dst/angular-modal-service.js"></script>
+      <script src="bower_components/ngModal/dist/ng-modal.js"></script>
+      <script src="bower_components/angular-ui-router/release/angular-ui-router.js"></script>
+      <script src="bower_components/angular-validation-match/dist/angular-validation-match.min.js"></script>
+      <script src="bower_components/auth0-lock/build/auth0-lock.js"></script>
+      <script src="bower_components/angular-animate/angular-animate.js"></script>
+      <script src="bower_components/angular-aria/angular-aria.js"></script>
+      <script src="bower_components/angular-messages/angular-messages.js"></script>
+      <script src="bower_components/angular-material/angular-material.js"></script>
+      <!-- endbower -->
+      <script src="bower_components/auth0.js/build/auth0.js"></script>
+      <script src="bower_components/a0-angular-storage/dist/angular-storage.js"></script>
+      <script src="bower_components/angular-jwt/dist/angular-jwt.js"></script>
+      <script src="bower_components/auth0-angular/build/auth0-angular.js"></script>
+    <!-- endbuild -->
+
+      <script src="app/app.security.module.js"></script>
+      <script src="app/settings.js"></script>
+
+    <!-- build:js(.tmp) app/app.js -->
+      <script src="app/app.js"></script>
+      <!-- injector:js -->
+      <script src="app/app.security.module.js"></script>
+      <script src="app/request/edit/requestitemedit.controller.js"></script>
+      <script src="app/account/signup/signup.controller.js"></script>
+      <script src="app/account/signup/signup.js"></script>
+      <script src="app/account/userpermission/userpermission.service.js"></script>
+      <script src="app/app.constant.js"></script>
+      <script src="app/account/login/login.controller.js"></script>
+      <script src="app/core/app.config.js"></script>
+      <script src="app/core/app.constants.js"></script>
+      <script src="app/core/app.controller.js"></script>
+      <script src="app/core/app.run.js"></script>
+      <script src="app/core/context.service.js"></script>
+      <script src="app/core/logger.service.js"></script>
+      <script src="app/dashboard/dashboard.controller.js"></script>
+      <script src="app/dashboard/dashboard.js"></script>
+      <script src="app/error/error.js"></script>
+      <script src="app/generictype/generictype.service.js"></script>
+      <script src="app/i18n/i18n.service.js"></script>
+      <script src="app/i18n/localize.filter.js"></script>
+      <script src="app/i18n/resources.js"></script>
+      <script src="app/project/project.service.js"></script>
+      <script src="app/request/action/requestitemactions.controller.js"></script>
+      <script src="app/request/detail/requestitemdetails.controller.js"></script>
+      <script src="app/account/login/login.js"></script>
+      <script src="app/request/list/requestlist.controller.js"></script>
+      <script src="app/request/new/incidentitemnew.controller.js"></script>
+      <script src="app/request/request.js"></script>
+      <script src="app/request/request.service.js"></script>
+      <script src="app/settings.js"></script>
+      <script src="app/tenant/tenant.service.js"></script>
+      <script src="app/tenantsettings/enrollcodes/enrollcode.service.js"></script>
+      <script src="app/tenantsettings/enrollcodes/enrollcodeslist.controller.js"></script>
+      <script src="app/tenantsettings/tenantsettings.controller.js"></script>
+      <script src="app/tenantsettings/tenantsettings.js"></script>
+      <script src="app/uniquecodes/uniquecode.service.js"></script>
+      <script src="app/util/utils.service.js"></script>
+      <script src="components/footer/footer.directive.js"></script>
+      <script src="components/layout/footer.directive.js"></script>
+      <script src="components/layout/header.directive.js"></script>
+      <script src="components/layout/loading-interceptor.service.js"></script>
+      <script src="components/layout/nav-menu.directive.js"></script>
+      <script src="components/layout/page-loader.directive.js"></script>
+      <script src="components/loopback-services/lb-services.js"></script>
+      <script src="components/navbar/navbar.controller.js"></script>
+      <script src="components/navbar/navbar.directive.js"></script>
+      <script src="components/security/requires-auth.directive.js"></script>
+      <script src="components/socket/socket.service.js"></script>
+      <!-- endinjector -->
+    <!-- endbuild -->
+  </body>
+</html>

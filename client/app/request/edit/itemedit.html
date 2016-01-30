@@ -1,0 +1,145 @@
+<!-- Edit Single Request-->
+<form name="requestForm" ng-submit="vm.save(requestForm.$valid)" novalidate> 
+<div class="card-body card-padding">
+    <div class="row">
+        <div class="col-xs-12">
+            <div class="fg-line form-group" ng-class="{ 'has-error' : requestForm.Subject.$error.required }">
+              <label class="control-label">Subject</label>
+                <input type="text" class="form-control input-sm" name="Subject" ng-maxlength="256" required ng-model="vm.request.Subject">
+            </div>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-xs-3">
+            <div class="fg-line form-group" ng-class="{ 'has-error' : requestForm.RequestType.$error.required }">
+                <label class="control-label">Request Type</label> 
+                <select name="requestType" required name="RequestType" ng-model="vm.request.RequestTypeId"
+                  ng-options="requestType._id as requestType.name for requestType in vm.requestOptions.requestTypeOptions">
+                </select>
+            </div>
+        </div>
+        <div class="col-xs-3">
+            <div class="fg-line form-group" ng-class="{ 'has-error' : requestForm.Subject.$error.required }">
+                <label>Status</label>
+                <select name="status" ng-model="vm.request.Status"
+                  ng-options="s.val as s.label for s in vm.requestOptions.statusOptions">
+                </select>
+            </div>
+        </div>
+        <div class="col-xs-3">
+            <div class="fg-line form-group">
+              <label>Impact</label>
+                 <select name="impact" ng-model="vm.request.ImpactId"
+                  ng-options="impact._id as impact.name for impact in vm.requestOptions.impactOptions">
+                </select>
+            </div>
+        </div>
+        <div class="col-xs-3">
+            <div class="fg-line form-group">
+              <label>Category</label>
+                <select name="category" ng-model="vm.request.CategoryId"
+                  ng-options="category._id as category.name for category in vm.requestOptions.categoryOptions">
+                </select>
+            </div>
+        </div>
+  
+    </div>
+
+
+    <div class="row">
+        <div class="col-xs-3">
+            <div class="fg-line form-group">
+              <label>Mode</label>
+                 <select name="mode" ng-model="vm.request.ModeId"
+                  ng-options="mode._id as mode.name for mode in vm.requestOptions.modeOptions">
+                </select>
+            </div>
+        </div>
+       <div class="col-xs-3">
+            <div class="fg-line form-group">
+              <label>Created By</label>
+                <input type="text" class="form-control input-sm" placeholder=".col-xs-4">
+            </div>
+        </div>
+        <div class="col-xs-3">
+            <div class="fg-line form-group">
+              <label>Created Date</label>
+                <input type="text" class="form-control input-sm" placeholder=".col-xs-4">
+            </div>
+        </div>
+     
+    
+        <div class="col-xs-3">
+            <div class="fg-line form-group">
+              <label>Response Due By</label>
+                <input type="text" class="form-control input-sm" placeholder=".col-xs-4">
+            </div>
+        </div>
+       
+        <div class="col-xs-3">
+            <div class="fg-line form-group">
+              <label>Urgency</label>
+                <select name="urgency" ng-model="vm.request.UrgencyId"
+                  ng-options="urgency._id as urgency.name for urgency in vm.requestOptions.urgencyOptions">
+                </select>
+            </div>
+        </div>
+        <div class="col-xs-3">
+            <div class="fg-line form-group">
+              <label>Priority</label>
+                 <select name="priority" ng-model="vm.request.PriorityId"
+                  ng-options="priority._id as priority.name for priority in vm.requestOptions.priorityOptions">
+                </select>
+            </div>
+        </div>
+        <div class="col-xs-3">
+            <div class="fg-line form-group">
+              <label>Project</label>
+                 <select name="project" ng-model="vm.request.ProjectId"
+                  ng-options="project._id as project.name for project in vm.requestOptions.projectOptions">
+                </select>
+            </div>
+        </div>
+        <div class="col-xs-3">
+            <div class="fg-line form-group">
+              <label>Department</label>
+                 <select name="department" ng-model="vm.request.DepartmentId"
+                  ng-options="department._id as department.name for department in vm.requestOptions.departmentOptions">
+                </select>
+            </div>
+        </div>
+      
+    </div>
+    <div class="row">
+        <div class="col-xs-12">
+            <div class="fg-line form-group">
+              <label>Description</label>
+                <textarea class="form-control" rows="5" ng-model="vm.request.Description" placeholder="Enter description"></textarea>
+            </div>
+        </div>
+        <div class="col-xs-3">
+            <div class="fg-line form-group">
+              <label>Impact Details</label>
+                <input type="text" class="form-control input-sm" ng-model="vm.request.ImpactDetails" placeholder="Impact Details">
+            </div>
+        </div> 
+          <div class="col-xs-3">
+            <div class="fg-line form-group">
+              <label>Preferred Service Person</label>
+                <input type="text" class="form-control input-sm" placeholder=".col-xs-6">
+            </div>
+        </div>
+        
+        <div class="col-xs-3">
+            <div class="fg-line form-group">
+              <label>Due By Date</label>
+                <input type="text" class="form-control input-sm" placeholder=".col-xs-6">
+            </div>
+        </div>
+    </div>
+
+    <div class="row">
+        <button ng-click="vm.save()">Save</button>
+    </div>
+</div> 
+

@@ -1,0 +1,246 @@
+<header ws-header></header>
+<section id="main">
+    <section id="content">
+      <div class="container">
+            <div class="block-header">
+                <h2>Requests</h2>
+
+                <!-- <ul class="actions">
+                    <li>
+                        <a href="">
+                            <i class="zmdi zmdi-trending-up"></i>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="">
+                            <i class="zmdi zmdi-check-all"></i>
+                        </a>
+                    </li>
+                    <li class="dropdown" dropdown>
+                        <a href="">
+                            <i class="zmdi zmdi-more-vert"></i>
+                        </a>
+
+                        <ul class="dropdown-menu dropdown-menu-right">
+                            <li>
+                                <a href="">New</a>
+                            </li>
+                            <li>
+                                <a href="">Manage Widgets</a>
+                            </li>
+                            <li>
+                                <a href="">Widgets Settings</a>
+                            </li>
+                        </ul>
+                    </li>
+                </ul> -->
+
+            </div>
+
+            <div class="card m-0">
+                <div class="card-header">
+                    <h2>Latest Requests <small>Search or filter above.</small></h2>  
+
+                    <ul class="actions">
+                       <!--  <li>
+                            <a href="">
+                                <i class="zmdi zmdi-refresh-alt"></i>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="">
+                                <i class="zmdi zmdi-download"></i>
+                            </a>
+                        </li> -->
+                        <li class="dropdown" dropdown>
+                            <a href="" action-dropdown aria-haspopup="true">
+                                <i class="zmdi zmdi-more-vert"></i>
+                            </a>
+
+                            <ul class="dropdown-menu dropdown-menu-right">
+                                <li>
+                                    <a href="" ng-click="vm.showAddRequestModal()">Add Request</a>
+                                </li>
+                            </ul>
+                        </li>
+                    </ul>
+                </div>
+
+                <div class="card-body" id="profile-main">
+                  <div class="pm-overview c-overflow">
+                      <!-- Listing of Requests -->
+                     <table class="ui sortable celled table" ng-show="vm.result.length">
+                      <thead>
+                        <tr>
+                          <th ng-bind="'Subject' | localize"></th>
+                        </tr>
+                      </thead>
+                      <tbody>
+                        <tr ng-repeat="request in vm.result">
+                          <td><a href="" ui-sref="user.requests.itemactions({requestId:request._id})">{{ request.Subject }}</a></td>
+                        </tr>
+                      </tbody>
+                      <tfoot>
+                        <tr>
+                          <th class="center aligned">
+                          </th>
+                        </tr>
+                      </tfoot>
+                    </table>
+                  </div>
+                  
+                    <div ui-view></div>
+
+
+                  </div>
+
+                  </div>
+
+
+
+                
+                </div>
+<a style="position: absolute; bottom: 6px; right: 123px;" href="" class="btn btn-login btn-danger btn-float" ng-click="vm.showAddRequestModal()"><i class="zmdi zmdi-plus-circle-o"></i></a>
+            </div>
+       
+    </section>
+</section>
+
+<modal-dialog show='vm.addRequestDialogShown' dialog-title='Add Request' height='95%' width='65%' style="overflow-y:auto;">
+
+<div class="card-body card-padding">
+    <div class="row">
+        <div class="col-xs-12">
+            <div class="fg-line form-group">
+              <label>Subject</label>
+                <input type="text" class="form-control input-sm" placeholder="Subject" ng-model="vm.request.Subject">
+            </div>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-xs-3">
+            <div class="fg-line form-group">
+                <label>Request Type</label> 
+                <select name="requestType" ng-model="vm.request.RequestTypeId"
+                  ng-options="requestType._id as requestType.name for requestType in vm.requestOptions.requestTypeOptions">
+                </select>
+            </div>
+        </div>
+      
+        <div class="col-xs-3">
+            <div class="fg-line form-group">
+              <label>Impact</label>
+                 <select name="impact" ng-model="vm.request.ImpactId"
+                  ng-options="impact._id as impact.name for impact in vm.requestOptions.impactOptions">
+                </select>
+            </div>
+        </div>
+        <div class="col-xs-3">
+            <div class="fg-line form-group">
+              <label>Category</label>
+                <select name="category" ng-model="vm.request.CategoryId"
+                  ng-options="category._id as category.name for category in vm.requestOptions.categoryOptions">
+                </select>
+            </div>
+        </div>
+  
+    </div>
+
+
+    <div class="row">
+        <div class="col-xs-3">
+            <div class="fg-line form-group">
+              <label>Mode</label>
+                 <select name="mode" ng-model="vm.request.ModeId"
+                  ng-options="mode._id as mode.name for mode in vm.requestOptions.modeOptions">
+                </select>
+            </div>
+        </div>
+       <div class="col-xs-3">
+            <div class="fg-line form-group">
+              <label>Created By</label>
+                <input type="text" class="form-control input-sm" placeholder=".col-xs-4">
+            </div>
+        </div>
+        <div class="col-xs-3">
+            <div class="fg-line form-group">
+              <label>Created Date</label>
+                <input type="text" class="form-control input-sm" placeholder=".col-xs-4">
+            </div>
+        </div>
+     
+    
+        <div class="col-xs-3">
+            <div class="fg-line form-group">
+              <label>Response Due By</label>
+                <input type="text" class="form-control input-sm" placeholder=".col-xs-4">
+            </div>
+        </div>
+       
+        <div class="col-xs-3">
+            <div class="fg-line form-group">
+              <label>Urgency</label>
+                <select name="urgency" ng-model="vm.request.UrgencyId"
+                  ng-options="urgency._id as urgency.name for urgency in vm.requestOptions.urgencyOptions">
+                </select>
+            </div>
+        </div>
+        <div class="col-xs-3">
+            <div class="fg-line form-group">
+              <label>Priority</label>
+                 <select name="priority" ng-model="vm.request.PriorityId"
+                  ng-options="priority._id as priority.name for priority in vm.requestOptions.priorityOptions">
+                </select>
+            </div>
+        </div>
+        <div class="col-xs-3">
+            <div class="fg-line form-group">
+              <label>Project</label>
+                 <select name="project" ng-model="vm.request.ProjectId"
+                  ng-options="project._id as project.name for project in vm.requestOptions.projectOptions">
+                </select>
+            </div>
+        </div>
+        <div class="col-xs-3">
+            <div class="fg-line form-group">
+              <label>Department</label>
+                 <select name="department" ng-model="vm.request.DepartmentId"
+                  ng-options="department._id as department.name for department in vm.requestOptions.departmentOptions">
+                </select>
+            </div>
+        </div>
+      
+    </div>
+    <div class="row">
+        <div class="col-xs-12">
+            <div class="fg-line form-group">
+              <label>Description</label>
+                <textarea class="form-control" rows="5" ng-model="vm.request.Description" placeholder="Enter description"></textarea>
+            </div>
+        </div>
+        <div class="col-xs-3">
+            <div class="fg-line form-group">
+              <label>Impact Details</label>
+                <input type="text" class="form-control input-sm" ng-model="vm.request.ImpactDetails" placeholder="Impact Details">
+            </div>
+        </div> 
+          <div class="col-xs-3">
+            <div class="fg-line form-group">
+              <label>Preferred Service Person</label>
+                <input type="text" class="form-control input-sm" placeholder=".col-xs-6">
+            </div>
+        </div>
+        
+        <div class="col-xs-3">
+            <div class="fg-line form-group">
+              <label>Due By Date</label>
+                <input type="text" class="form-control input-sm" placeholder=".col-xs-6">
+            </div>
+        </div>
+    </div>
+
+    <div class="row">
+        <button ng-click="vm.addRequestSave()">Save</button>
+    </div>
+</div> 
+</modal-dialog>

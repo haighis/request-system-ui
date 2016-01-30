@@ -1,0 +1,32 @@
+<div layout="column" class="relative" layout-fill role="main">
+  <app-header title="Error" ></app-header>
+      <!-- 
+      Navigation Drawer
+      <navigation-drawer></navigation-drawer> -->
+   <md-content class="md-padding" layout="row" layout-wrap layout-align="center center">
+
+          <div flex="35" flex-xs="35" layout="column">
+            <md-card>
+                <md-card-header>
+                  <md-card-avatar>
+                    
+                  </md-card-avatar>
+                  <md-card-header-text>
+                    Error
+                  </md-card-header-text>
+                </md-card-header>
+       
+            <md-card-content>
+                <form name="projectForm" ng-controller="LoginCtrl">
+                  <md-input-container class="md-block">
+                   You have been a bad boy or girl. Please <a ui-sref="anon.login">go back</a> and try again.
+                  </md-input-container>
+                </form>
+            </md-card-content>
+            
+            </md-card>
+
+          </div>
+
+        </md-content>
+</div>

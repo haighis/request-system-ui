@@ -1,0 +1,43 @@
+<div layout="column" class="relative" layout-fill role="main">
+  <app-header title="Login" ></app-header>
+      <!-- 
+      Navigation Drawer
+      <navigation-drawer></navigation-drawer> -->
+   <md-content class="md-padding" layout="row" layout-wrap layout-align="center center">
+
+          <div flex="35" flex-xs="35" layout="column">
+            <md-card>
+        <md-card-header>
+          <md-card-avatar>
+            
+          </md-card-avatar>
+          <md-card-header-text>
+            
+          </md-card-header-text>
+        </md-card-header>
+       
+            <md-card-content>
+       
+          
+            <form name="projectForm" ng-controller="LoginCtrl">
+      <md-input-container class="md-block">
+       
+<a ng-click="vm.doGoogleAuthWithPopup()">Login with Google</a>
+
+
+      </md-input-container>
+
+
+    </form>
+
+
+            </md-card-content>
+            <md-card-actions layout="row" layout-align="end center">
+            <md-button ui-sref="anon.signup">Signup</md-button>
+            </md-card-actions>
+            </md-card>
+
+          </div>
+
+        </md-content>
+</div>

@@ -1,0 +1,54 @@
+<div layout="column" class="relative" layout-fill role="main">
+  <app-header title="Sign up" ></app-header>
+      <!-- 
+      Navigation Drawer
+      <navigation-drawer></navigation-drawer> -->
+   <md-content class="md-padding" layout="row" layout-wrap layout-align="center center">
+
+          <div flex="35" flex-xs="35" layout="column">
+            <md-card>
+        <md-card-header>
+          <md-card-avatar>
+            
+          </md-card-avatar>
+          <md-card-header-text>
+            Become a member
+          </md-card-header-text>
+        </md-card-header>
+       
+            <md-card-content>
+       
+                <form name="signupForm" ng-submit="vm.doGoogleAuthWithPopup(signupForm.$valid)" novalidate> 
+
+                     <md-input-container class="md-block" flex-gt-sm>
+                          <label>Company</label>
+
+                          <input md-maxlength="30" required name="fullname" ng-model="vm.signup.Name" />
+                          <div ng-messages="signupForm.fullname.$error">
+                            <div ng-message="required">Company is required.</div>
+                            <div ng-message="md-maxlength">The Company has to be less than 30 characters long.</div>
+                          </div>
+                        </md-input-container>
+
+                        <md-input-container class="md-block" flex-gt-sm>
+                           {{ vm.infoMessage }} 
+                           <button ng-show="vm.registerSuccess" ui-sref="login">Proceed to Login</button>
+                         </md-input-container>
+                </form>
+
+            </md-card-content>
+
+            <md-card-actions layout="row" layout-align="center center">
+                <md-button class="md-primary" ng-click="vm.doGoogleAuthWithPopup()" ng-disabled="signupForm.$invalid">Sign up with Google</md-button>
+            </md-card-actions>
+
+            <md-card-actions layout="row" layout-align="end center">
+                <md-button ui-sref="anon.login">Login</md-button>
+                
+            </md-card-actions>
+            </md-card>
+
+          </div>
+
+        </md-content>
+</div>
